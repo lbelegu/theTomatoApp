@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+/* Define the animation */
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.word {
+  display: inline-block; 
+}
+
+.animate-words .word {
+  animation-name: moveUpDown;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; 
+}
+
+.animate-words .word[data-word-index="2"] {
+  animation-delay: 0.1s;
+}
+
+.animate-words .word[data-word-index="3"] {
+  animation-delay: 0.2s;
+}

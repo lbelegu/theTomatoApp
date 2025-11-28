@@ -88,3 +88,23 @@ window.addEventListener("load", () => {
       ease: "power2.inOut"
     }, "<");
 });
+
+// 1. Get the element that wraps the words
+const titleElement = document.querySelector('.app-title');
+const introDurationMs = 2500; // Time for the main site intro to complete
+const animationDurationMs = 5000; // Time the word animation should run
+
+// --- STEP 1: START THE ANIMATION ---
+// Wait for the main intro to finish
+setTimeout(() => {
+  // Add the class to START the words animation (triggers CSS)
+  titleElement.classList.add('animate-words');
+  console.log('Word animation started!');
+
+  // --- STEP 2: STOP THE ANIMATION ---
+  setTimeout(() => {
+    titleElement.classList.remove('animate-words');
+    console.log('Word animation stopped!');
+  }, animationDurationMs);
+
+}, introDurationMs);
